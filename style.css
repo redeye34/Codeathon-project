@@ -1,0 +1,1047 @@
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#000;
+    color:white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 70px;
+    background:#000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* Nav Links */
+
+.nav-links{
+    display:flex;
+    gap:45px;
+    text-align: end;
+}
+
+.nav-links a{
+    position:relative;
+    text-decoration:none;
+    color:#cfcfcf;
+    font-size:16px;
+    font-weight:500;
+    padding-bottom:5px;
+    transition:0.3s ease;
+}
+
+/* Hover text color */
+.nav-links a:hover{
+    color:#facc15;
+}
+
+/* Underline animation */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0%;
+    height:2px;
+    background:#facc15;
+    transition:0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* Buttons */
+
+.nav-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.login-btn{
+    background:transparent;
+    border:1px solid #555;
+    color:white;
+    padding:8px 24px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    border-color:#facc15;
+    color:#facc15;
+}
+
+.register-btn{
+    background:#facc15;
+    border:none;
+    color:black;
+    padding:8px 24px;
+    border-radius:25px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.register-btn:hover{
+    background:#eab308;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding-left:90px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:85px;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:35px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#cfcfcf;
+    line-height:1.6;
+    max-width:650px;
+    margin-bottom:45px;
+}
+
+/* Book Button */
+
+.book-btn{
+    background:#facc15;
+    border:none;
+    padding:18px 45px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:600;
+    color:black;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+/* Hover effect (Red + Glow + Lift) */
+.book-btn:hover{
+    background:#e74c3c;
+    color:white;
+    box-shadow:0 12px 30px rgba(231,76,60,0.6);
+    transform:translateY(-4px);
+}
+.booking-section {
+    background: linear-gradient(to bottom, #b4001c, #a00018);
+    padding: 100px 0;
+}
+
+.booking-container {
+    width: 85%;
+    margin: auto;
+}
+
+.booking-container h2 {
+    font-size: 70px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 60px;
+}
+
+.booking-card {
+    background: #b71c2f;
+    padding: 50px;
+    border-radius: 20px;
+    width: 60%;
+    margin: auto;
+}
+
+/* FORM */
+
+.booking-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-card label {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.booking-card input,
+.booking-card select {
+    padding: 18px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background: #d7cdcf;
+    outline: none;
+}
+
+/* PHONE GROUP */
+
+.phone-group {
+    display: flex;
+}
+
+.country-code {
+    background: #f1eaea;
+    padding: 18px;
+    border-radius: 10px 0 0 10px;
+    font-weight: 600;
+    color: #b4001c;
+}
+
+.phone-group input {
+    border-radius: 0 10px 10px 0;
+    flex: 1;
+}
+
+/* BUTTON GROUP */
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+/* DYNAMIC SECTIONS (Clinic, Restaurant, Salon) */
+
+.dynamic-section {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid #ffc61a;
+}
+
+.dynamic-section.active {
+    display: block;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dynamic-section label {
+    color: black;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    display: block;
+}
+
+.dynamic-section input,
+.dynamic-section select,
+.dynamic-section textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d7cdcf;
+    font-size: 14px;
+    background: #2a2a2a;
+    color: black;
+    outline: none;
+    width: 100%;
+}
+
+.dynamic-section textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+/* Yellow Button */
+
+.confirm-btn {
+    background: #facc15;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.confirm-btn:hover {
+    background: #eab308;
+}
+
+/* Outline Button */
+
+.outline-btn {
+    background: transparent;
+    border: 2px solid #facc15;
+    color: #facc15;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.outline-btn:hover {
+    background: #facc15;
+    color: black;
+}
+
+/* Large Outline Button */
+
+.outline-large {
+    background: transparent;
+    border: 2px solid #facc15;
+    color: #facc15;
+    padding: 16px 35px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.outline-large:hover {
+    background: #facc15;
+    color: black;
+}
+
+/* Primary Button (Red) */
+
+.primary-btn {
+    background: #e74c3c;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: #c0392b;
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Secondary Button (Outline) */
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid #facc15;
+    color: #facc15;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.secondary-btn:hover {
+    background: #facc15;
+    color: black;
+}
+
+/* Priority & Payment Options */
+
+.priority {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(250, 204, 21, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #facc15;
+}
+
+.priority input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.priority label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 500;
+    color: #facc15;
+}
+
+.priority p {
+    margin: 0;
+    margin-left: auto;
+    font-weight: 700;
+    color: #facc15;
+    font-size: 18px;
+}
+
+/* Payment Method and Error Text */
+
+.payment-options,
+.payment-method {
+    display: none;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.payment-options.show,
+.payment-method.show {
+    display: flex;
+}
+
+.payment-options label,
+.payment-method label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 14px;
+}
+
+.payment-options input[type="radio"],
+.payment-method input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.info-text {
+    color: #facc15;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.outline-large {
+    margin-top: 25px;
+    background: transparent;
+    border: 2px solid #facc15;
+    color: #facc15;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.outline-large:hover {
+    background: #facc15;
+    color: black;
+}
+/* ================= ORDER SECTION ================= */
+
+.order-section {
+    background: #000;
+    padding: 140px 0;
+    text-align: center;
+}
+
+.order-container {
+    width: 80%;
+    margin: auto;
+}
+
+.order-container h2 {
+    font-size: 70px;
+    font-weight: 800;
+    color: #d9d9d9;
+    margin-bottom: 30px;
+}
+
+.order-container p {
+    font-size: 20px;
+    color: #bfbfbf;
+    margin-bottom: 50px;
+}
+
+/* Button */
+
+.pharmacy-btn {
+    background: #facc15;
+    color: black;
+    border: none;
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect (same red glow style) */
+
+.pharmacy-btn:hover {
+    background: #e74c3c;
+    color: white;
+    box-shadow: 0 12px 30px rgba(231, 76, 60, 0.6);
+    transform: translateY(-4px);
+}
+
+.story-section {
+    background: #000;
+    padding: 120px 0 140px 0;
+}
+
+.story-container {
+    width: 68%;
+    margin-left: 90px;  /* Left alignment like first image */
+}
+
+/* Heading */
+.story-container h2 {
+    font-size: 72px;
+    font-weight: 800;
+    color: #d9d9d9;
+    margin-bottom: 55px;
+}
+
+/* Paragraph */
+.story-container p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #d0d0d0;
+    margin-bottom: 35px;
+}
+
+/* Strong text */
+.story-container strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Quote block */
+.quote {
+    border-left: 4px solid #facc15;
+    padding-left: 22px;
+    margin: 45px 0;
+    font-size: 15px;
+    font-style: italic;
+    color: #facc15;
+    max-width: 95%;
+}
+.connect-section {
+    background: #000;
+    padding: 140px 0 80px 0;
+    text-align: center;
+}
+
+.connect-container {
+    width: 80%;
+    margin: auto;
+}
+
+/* Heading */
+.connect-container h2 {
+    font-size: 72px;
+    font-weight: 800;
+    color: #d9d9d9;
+    margin-bottom: 35px;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 20px;
+    color: #cfcfcf;
+    margin-bottom: 70px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.social-icons a {
+    font-size: 32px;
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #facc15;
+    transform: translateY(-5px);
+}
+
+/* Tagline */
+.tagline {
+    color: #facc15;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Copyright */
+.copyright {
+    color: #cfcfcf;
+    font-size: 16px;
+}
+/* ================= BOOKING FORM CLEAN LAYOUT ================= */
+
+.booking-card form {
+    display: flex;
+    flex-direction: column;   /* STACK EVERYTHING VERTICALLY */
+}
+
+.booking-card label {
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    display: block;
+}
+
+.booking-card input,
+.booking-card select,
+.booking-card textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: #d7cdcf;
+    font-size: 16px;
+}
+
+/* Textarea spacing */
+.booking-card textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Add space between sections */
+#clinicFields > * {
+    margin-bottom: 15px;
+}
+
+/* Coupon button spacing */
+.confirm-btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Priority spacing */
+.priority {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Payment radio spacing */
+.payment-options label {
+    display: block;
+    margin-bottom: 10px;
+}
+/* ================= HOSPITAL RESERVATION ================= */
+
+#hospitalFields {
+    display: none;
+    margin-top: 30px;
+}
+
+#hospitalFields label {
+    display: block;
+    margin-top: 22px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1a0606;
+}
+
+#hospitalFields input,
+#hospitalFields select,
+#hospitalFields textarea {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: #d7cdcf;
+    font-size: 15px;
+    outline: none;
+}
+
+#hospitalFields textarea {
+    height: 90px;
+    resize: none;
+}
+
+#hospitalFields input:focus,
+#hospitalFields select:focus,
+#hospitalFields textarea:focus {
+    border: 2px solid #facc15;
+}
+
+.error-text {
+    color: #ffcc80;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+#hospitalFields .secondary-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #facc15;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#hospitalFields .primary-btn {
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: #facc15;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#hospitalFields .priority {
+    margin-top: 25px;
+}
+
+#hospitalFields .priority p {
+    color: #facc15;
+    margin-top: 5px;
+}
+
+#hospitalFields .payment-options {
+    margin-top: 20px;
+}
+
+#hospitalFields .payment-options label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ================= BOOKING CONFIRMATION MODAL ================= */
+
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.confirmation-modal.active {
+    display: flex;
+}
+
+.confirmation-box {
+    background: linear-gradient(to bottom, #b71c2f, #a00018);
+    width: 600px;
+    padding: 50px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.confirmation-box h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.qr-code-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    min-height: 250px;
+}
+
+#qrCode {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.booking-details {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.detail-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.detail-value {
+    color: #facc15;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.close-confirmation {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #facc15;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close-confirmation:hover {
+    color: #e6a500;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+    .hero h1{
+        font-size:55px;
+    }
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:20px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding:40px 20px;
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
+
+/* ================= REGISTER MODAL ================= */
+
+.register-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.register-modal.active {
+    display: flex;
+}
+
+.register-box {
+    background: #0d0d0d;
+    width: 420px;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.register-box h2 {
+    margin-bottom: 25px;
+    color: #f5b700;
+}
+
+.register-box label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #cfcfcf;
+}
+
+.register-box input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+}
+
+.register-box input:focus {
+    outline: 2px solid #f5b700;
+}
+
+/* Phone Group */
+.phone-group {
+    display: flex;
+}
+
+.country-code {
+    background: #d9d9d9;
+    padding: 14px;
+    border-radius: 10px 0 0 10px;
+    color: #b3001b;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.phone-group input {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Password Group */
+.password-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-group input {
+    flex: 1;
+}
+
+.toggle-pass {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #b3001b;
+    font-weight: 600;
+    font-size: 12px;
+    user-select: none;
+}
+
+.toggle-pass:hover {
+    color: #f5b700;
+}
+
+/* Create Button */
+.create-btn {
+    margin-top: 25px;
+    padding: 14px;
+    width: 100%;
+    background: #f5b700;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+    background: #e6a500;
+    box-shadow: 0 8px 20px rgba(245, 183, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Login Text */
+.login-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.login-text a {
+    color: #f5b700;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #f5b700;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #e6a500;
+}
+
+

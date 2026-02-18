@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATRAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="navbar">
+        <div class="logo">ATRAS</div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#booking">Book Appointment</a>
+            <a href="#order">Order Medicine</a>
+            <a href="#story">Our Story</a>
+            <a href="#connect">Connect</a>
+        </nav>
+        <div class="nav-buttons">
+            <button class="login-btn">Login</button>
+            <button class="register-btn" id="openRegister">Register</button>
+        </div>
+    </header>
+
+    <!-- REGISTER MODAL -->
+    <div class="register-modal" id="registerModal">
+        <div class="register-box">
+            <span class="close-btn" id="closeRegister">&times;</span>
+            <h2>Register with ATRAS</h2>
+            <form id="registerForm">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your full name" required>
+
+                <label>Email Address</label>
+                <input type="email" placeholder="Your email" required>
+
+                <label>Phone Number</label>
+                <div class="phone-group">
+                    <span class="country-code">+91</span>
+                    <input type="text" placeholder="10-digit number" maxlength="10" required>
+                </div>
+
+                <label>Password</label>
+                <div class="password-group">
+                    <input type="password" id="password" placeholder="Create password" required>
+                    <span class="toggle-pass" id="togglePass1">Show</span>
+                </div>
+
+                <label>Confirm Password</label>
+                <div class="password-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                    <span class="toggle-pass" id="togglePass2">Show</span>
+                </div>
+
+                <button type="submit" class="create-btn">Create Account</button>
+
+                <p class="login-text">
+                    Already have an account?
+                    <a href="#" id="loginLink">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Time, Reimagined</h1>
+            <p>
+                Seamless booking for clinics, restaurants, hospitals,
+                and salon services. Designed to give you back what
+                matters most - your time.
+            </p>
+            <button class="book-btn">Book Now</button>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="booking-section">
+        <div class="booking-container">
+            <h2>Book Your Appointment</h2>
+            <div class="booking-card">
+                <form>
+                    <label>Name</label>
+                    <input type="text" placeholder="Your name" required>
+
+                    <label>Phone Number</label>
+                    <div class="phone-group">
+                        <span class="country-code">+91</span>
+                        <input type="text" placeholder="10-digit number" required>
+                    </div>
+
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Your email" required>
+
+                    <label>Service Type</label>
+                    <select id="serviceType" required>
+                        <option value="">Select service</option>
+                        <option value="clinic">Clinic Appointment</option>
+                        <option value="restaurant">Restaurant Reservation</option>
+                        <option value="salon">salon Visit</option>
+                    </select>
+
+                    <!-- CLINIC RESERVATION SECTION -->
+                    <div id="clinicFields" class="dynamic-section">
+                        <label>Describe Your Problem</label>
+                        <textarea placeholder="Type your problem..." required></textarea>
+                        <small class="info-text">Analyzing your problem...</small>
+
+                        <label>Booking Date</label>
+                        <input type="date" required>
+
+                        <label>Select Provider</label>
+                        <select required>
+                            <option value="">Select provider</option>
+                            <option>Dr. Kumar (General Physician)</option>
+                            <option>Dr. Mehta (Cardiologist)</option>
+                            <option>Dr. Anjali (Dermatologist)</option>
+                            <option>Dr. Ramesh (Orthopedic)</option>
+                            <option>Dr. Priya (Pediatrician)</option>
+                        </select>
+                        <small class="error-text">Please select a provider.</small>
+
+                        <label>Time Slot</label>
+                        <select required>
+                            <option value="">Select time slot</option>
+                            <option>10:00 AM</option>
+                            <option>11:00 AM</option>
+                            <option>12:00 PM</option>
+                            <option>1:00 PM</option>
+                            <option>2:00 PM</option>
+                            <option>3:00 PM</option>
+                            <option>4:00 PM</option>
+                        </select>
+                        <small class="error-text">Please select a time slot.</small>
+
+                        <label>Enter Coupon Code</label>
+                        <input type="text" placeholder="e.g., ATR50">
+                        <button type="button" class="secondary-btn">Apply Coupon</button>
+
+                        <div class="priority">
+                            <input type="checkbox" id="priorityClinic" checked>
+                            <label for="priorityClinic">Priority Booking</label>
+                            <p>₹500</p>
+                        </div>
+
+                        <label>Pay Amount</label>
+                        <button type="button" class="primary-btn">Pay Now</button>
+
+                        <div class="payment-options">
+                            <label><input type="radio" name="paymentClinic"> Card</label>
+                            <label><input type="radio" name="paymentClinic" checked> UPI</label>
+                            <label><input type="radio" name="paymentClinic"> Cash</label>
+                        </div>
+                    </div>
+
+                    <!-- RESTAURANT RESERVATION SECTION -->
+                    <div id="restaurantFields" class="dynamic-section">
+                        <label>Booking Date</label>
+                        <input type="date" required>
+
+                        <label>Select Provider</label>
+                        <select required>
+                            <option value="">Select provider</option>
+                            <option>The Marina (Taj Coromandel)</option>
+                            <option>Peshawri (ITC Grand Chola)</option>
+                            <option>Dakshin (Park Hyatt)</option>
+                            <option>Flying Elephant (Park Hyatt)</option>
+                            <option>The Raintree (Anna Salai)</option>
+                            <option>Murugan Idli Shop (T. Nagar)</option>
+                            <option>Ratna Café (Triplicane)</option>
+                            <option>Sangeetha Veg Restaurant</option>
+                            <option>Saravana Bhavan</option>
+                            <option>Adyar Ananda Bhavan (A2B)</option>
+                        </select>
+
+                        <label>Number of People</label>
+                        <input type="number" min="1" value="1" required>
+
+                        <label>Food Preference</label>
+                        <select required>
+                            <option value="">Select preference</option>
+                            <option>Vegetarian</option>
+                            <option>Non-Vegetarian</option>
+                            <option>Both</option>
+                        </select>
+
+                        <label>Enter Coupon Code</label>
+                        <input type="text" placeholder="e.g., ATR50">
+                        <button type="button" class="secondary-btn">Apply Coupon</button>
+
+                        <div class="priority">
+                            <input type="checkbox" id="priorityRestaurant" checked>
+                            <label for="priorityRestaurant">Priority Booking</label>
+                            <p>₹1000</p>
+                        </div>
+
+                        <label>Pay Amount</label>
+                        <button type="button" class="primary-btn">Pay Now</button>
+                    </div>
+
+                    <!-- SALON RESERVATION SECTION -->
+                    <div id="salonFields" class="dynamic-section">
+                        <label>Booking Date</label>
+                        <input type="date" required>
+
+                        <label>Select Salon</label>
+                        <select required>
+                            <option>Select provider</option>
+                            <option>Jean Claude Biguine (Boat Club Road)</option>
+                            <option>Lakmé Salon (Multiple Branches)</option>
+                            <option>Tony & Guy (Nungambakkam)</option>
+                            <option>Bounce Salon (Alwarpet)</option>
+                            <option>Green Trends (Multiple Branches)</option>
+                            <option>Naturals Salon (Multiple Branches)</option>
+                            <option>Looks Salon (Velachery)</option>
+                            <option>H2O Spa & Salon (Adyar)</option>
+                            <option>Hair Expe Salon (Anna Nagar)</option>
+                        </select>
+
+                        <label>Select Service</label>
+                        <select required>
+                            <option>Select service</option>
+                            <option>Haircut</option>
+                            <option>Hair Spa</option>
+                            <option>Facial</option>
+                            <option>Beard Styling</option>
+                            <option>Bridal Makeup</option>
+                            <option>Manicure / Pedicure</option>
+                        </select>
+
+                        <label>Time Slot</label>
+                        <select required>
+                            <option>Select time slot</option>
+                            <option>10:00 AM</option>
+                            <option>11:00 AM</option>
+                            <option>12:00 PM</option>
+                            <option>1:00 PM</option>
+                            <option>2:00 PM</option>
+                            <option>3:00 PM</option>
+                            <option>4:00 PM</option>
+                            <option>5:00 PM</option>
+                            <option>6:00 PM</option>
+                            <option>7:00 PM</option>
+                            <option>8:00 PM</option>
+                            <option>9:00 PM</option>
+                        </select>
+
+                        <label>Enter Coupon Code</label>
+                        <input type="text" placeholder="e.g., ATR50">
+                        <button type="button" class="secondary-btn">Apply Coupon</button>
+
+                        <div class="priority">
+                            <input type="checkbox">
+                            <span>Priority Booking</span>
+                            <p class="price">₹300</p>
+                        </div>
+
+                        <label>Pay Amount</label>
+                        <button type="button" class="primary-btn">Pay Now</button>
+
+                        <div class="payment-method">
+                            <label><input type="radio" name="payment"> Card</label>
+                            <label><input type="radio" name="payment" checked> UPI</label>
+                            <label><input type="radio" name="payment"> Cash</label>
+                        </div>
+                    </div>
+
+
+                    <div class="btn-group">
+                        <button type="submit" class="confirm-btn">Confirm Booking</button>
+                        <button type="button" class="outline-btn">Register with Us</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- ORDER MEDICINE SECTION -->
+    <section id="order" class="order-section">
+        <div class="order-container">
+            <h2>Order Medicines</h2>
+            <p>
+                Need medicines? Order seamlessly through our partnered stores.
+            </p>
+            <button class="pharmacy-btn">Visit Pharmacy Store</button>
+        </div>
+    </section>
+
+    <!-- OUR STORY SECTION -->
+    <section id="story" class="story-section">
+        <div class="story-container">
+            <h2>Our Story</h2>
+            <p>
+                Every idea begins with a problem — and for us, it was watching people around us lose their time in never-ending queues, missed reservations, and frustrating last-minute cancellations. From clinics to restaurants, from hospitals to salons, we saw the struggle everywhere.
+            </p>
+
+            <p>
+                In January 2023, Faazil sat down and asked a simple question:
+                <strong>"Why is booking a service still so complicated?"</strong>
+            </p>
+            <div class="quote">
+                "I built Atras not as a company, but as a solution. A solution that empowers users to book services with ease, and helps businesses manage queues smarter."
+            </div>
+            <p>
+                That question sparked something deeper. What began as a casual discussion quickly turned into a mission — to create a platform that simplifies service booking, removes the waiting, and gives time back to people.
+            </p>
+        </div>
+    </section>
+<section id="connect" class="connect-section">
+    <div class="connect-container">
+            <h2>Connect With Us</h2>
+            <p class="subtitle">
+                Follow our journey and stay updated with our latest features
+            </p>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <p class="tagline">
+            We’re constantly improving — fresh features ahead
+        </p>
+
+        <p class="copyright">
+            © 2025 Atras. Crafted with care by Safwa Studios X Atras. All rights reserved.
+        </p>
+
+    </div>
+
+
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>
